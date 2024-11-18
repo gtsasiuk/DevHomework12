@@ -62,7 +62,6 @@ public class SpaceTravel {
         ticketService.update(retrievedTicket);
         System.out.println("Updated ticket: " + ticketService.findById(retrievedTicket.getId()));
 
-        // Delete ticket
         ticketService.delete(retrievedTicket);
         System.out.println("Deleted ticket. Attempting to fetch: " + ticketService.findById(retrievedTicket.getId()));
 
