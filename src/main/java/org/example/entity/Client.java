@@ -3,6 +3,8 @@ package org.example.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Table(name = "client")
 @Data
@@ -14,4 +16,12 @@ public class Client {
 
     @Column(nullable = false, length = 200)
     private String name;
+
+    @OneToMany(mappedBy = "client")
+    private List<Ticket> tickets;
+
+    @Override
+    public String toString() {
+        return "Client{id=" + id + ", name='" + name + "'}";
+    }
 }
